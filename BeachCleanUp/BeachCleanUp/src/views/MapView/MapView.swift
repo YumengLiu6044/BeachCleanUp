@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapView: View {
+    
+    @ObservedObject var mapViewModel = MapViewModel()
+    
     var body: some View {
-        VStack {
-            Text("Map!")
+        Map(position: $mapViewModel.cameraPosition) {
+            UserAnnotation()
+        }
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
             
-            Image(systemName: "map")
-                .font(.largeTitle)
         }
     }
 }

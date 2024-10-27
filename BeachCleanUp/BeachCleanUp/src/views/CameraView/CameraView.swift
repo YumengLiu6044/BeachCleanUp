@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CameraView: View {
     var body: some View {
-        VStack {
+        NavigationStack {
             Text("Camera!")
             
             Image(systemName: "camera")

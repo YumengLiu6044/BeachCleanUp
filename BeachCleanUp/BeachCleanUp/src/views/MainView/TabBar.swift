@@ -74,7 +74,7 @@ struct TabBar: View {
         }
         .padding([.leading, .trailing, .top])
         .background(ignoresSafeAreaEdges: .all)
-        .backgroundStyle(.ultraThickMaterial)
+        .backgroundStyle(.thickMaterial)
         
     }
 }
