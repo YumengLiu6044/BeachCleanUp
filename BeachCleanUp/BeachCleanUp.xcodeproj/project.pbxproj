@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E2B579622CCF2CE60057D733 /* MijickCameraView in Frameworks */ = {isa = PBXBuildFile; productRef = E2B579612CCF2CE60057D733 /* MijickCameraView */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E25DA5E12CCC72E400A479DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B579622CCF2CE60057D733 /* MijickCameraView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				E25DA5D22CCC72E200A479DB /* BeachCleanUp */,
 				E25DA5E32CCC72E400A479DB /* BeachCleanUpTests */,
 				E25DA5ED2CCC72E400A479DB /* BeachCleanUpUITests */,
+				E2B5795F2CCF2CC90057D733 /* Frameworks */,
 				E25DA5D12CCC72E200A479DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				E25DA5EA2CCC72E400A479DB /* BeachCleanUpUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E2B5795F2CCF2CC90057D733 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = BeachCleanUp;
 			packageProductDependencies = (
+				E2B579612CCF2CE60057D733 /* MijickCameraView */,
 			);
 			productName = BeachCleanUp;
 			productReference = E25DA5D02CCC72E200A479DB /* BeachCleanUp.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = E25DA5C72CCC72E200A479DB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E25DA5D12CCC72E200A479DB /* Products */;
 			projectDirPath = "";
@@ -399,12 +416,15 @@
 				DEVELOPMENT_TEAM = 7P8Y78RF8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need to use camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to access user location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to use mic";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,12 +449,15 @@
 				DEVELOPMENT_TEAM = 7P8Y78RF8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need to use camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to access user location";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to use mic";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,6 +583,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mijick/CameraView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2B579612CCF2CE60057D733 /* MijickCameraView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */;
+			productName = MijickCameraView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E25DA5C82CCC72E200A479DB /* Project object */;
 }

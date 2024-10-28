@@ -20,6 +20,19 @@ class MapViewModel: ObservableObject {
     @Published var cameraPosition: MapCameraPosition
     @Published var cameraBounds: MapCameraBounds
     
+    // Add locations of trash
+    
+    // Add locations of trash cans
+    
+    // Add locations of rovers
+    
+    // Add listener for trash
+    
+    // Add listener for trash cans
+    
+    // Add listener for rovers
+    
+    
     @State private var userLocation: CLLocation?
     @State private var userHeading: CLHeading?
     
@@ -41,5 +54,13 @@ class MapViewModel: ObservableObject {
         }
         .store(in: &cancellables)
     }
+    
+    // MARK: Removes listeners
+    func removeListeners() -> Void {
+        
+    }
+    
+    
+    
     
 }
