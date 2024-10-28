@@ -1,11 +1,11 @@
 import SwiftUI
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
-    var userLocation: CLLocation?
-    var userHeading: CLHeading?
-    var isAuthorized = false
+    @Published var userLocation: CLLocation?
+    @Published var userHeading: CLHeading?
+    @Published var isAuthorized = false
     
     override init() {
         super.init()
@@ -16,6 +16,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func startLocationServices() {
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
             manager.startUpdatingLocation()
+            manager.startUpdatingHeading()
             isAuthorized = true
         } else {
             isAuthorized = false

@@ -13,14 +13,17 @@ struct MapView: View {
     @ObservedObject var mapViewModel = MapViewModel()
     
     var body: some View {
-        Map(position: $mapViewModel.cameraPosition) {
+        Map(
+            position: $mapViewModel.cameraPosition,
+            bounds: mapViewModel.cameraBounds
+        ) {
             UserAnnotation()
         }
         .mapControls {
             MapUserLocationButton()
             MapCompass()
-            
         }
+        .mapStyle(.standard(pointsOfInterest: .excludingAll))
     }
 }
 
