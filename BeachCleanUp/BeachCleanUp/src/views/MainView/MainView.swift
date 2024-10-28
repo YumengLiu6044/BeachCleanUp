@@ -15,7 +15,7 @@ struct MainView: View {
                     .transition(.opacity)
 
             case .setting:
-                SettingView()
+                InfoView()
                     .transition(.move(edge: .trailing).combined(with: .opacity))
 
             }

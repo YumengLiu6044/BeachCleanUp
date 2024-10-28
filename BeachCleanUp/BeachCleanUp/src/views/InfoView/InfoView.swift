@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct SettingView: View {
+struct InfoView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Setting!")
+                Text("Infos")
                 
-                Image(systemName: "gear")
+                Image(systemName: "info.circle")
                     .font(.largeTitle)
             }
-            .navigationTitle("Setting")
+            .navigationTitle("Info")
         }
     }
 }
 
 #Preview {
-    SettingView()
+    InfoView()
 }

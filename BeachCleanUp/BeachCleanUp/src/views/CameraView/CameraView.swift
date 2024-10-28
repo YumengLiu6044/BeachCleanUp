@@ -26,13 +26,10 @@ struct CameraView: View {
     
     @ViewBuilder
     private func customCamera(manager: CameraManager, namespace: Namespace.ID, action: @escaping () -> Void) -> any MCameraView {
-        DefaultCameraView(cameraManager: manager, namespace: namespace) {
-            
-        }
+        DefaultCameraView(cameraManager: manager, namespace: namespace, closeControllerAction: {})
         .outputTypePickerVisible(false)
-        
-        
     }
+    
     var body: some View {
         VStack {
             if let _ = image {

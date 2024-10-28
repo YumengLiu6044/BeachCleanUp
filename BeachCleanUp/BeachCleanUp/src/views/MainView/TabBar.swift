@@ -60,10 +60,10 @@ struct TabBar: View {
             }
             label: {
                 VStack {
-                    Image(systemName: "gear")
+                    Image(systemName: "info.circle")
                         .font(.title)
                     
-                    Text("Setting")
+                    Text("Info")
                         .font(.caption)
                         
                 }
