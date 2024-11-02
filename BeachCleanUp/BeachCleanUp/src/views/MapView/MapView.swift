@@ -13,17 +13,24 @@ struct MapView: View {
     @ObservedObject var mapViewModel = MapViewModel()
     
     var body: some View {
-        Map(
-            position: $mapViewModel.cameraPosition,
-            bounds: mapViewModel.cameraBounds
-        ) {
-            UserAnnotation()
+        ZStack {
+            Map(
+                position: $mapViewModel.cameraPosition,
+                bounds: mapViewModel.cameraBounds
+            ) {
+                UserAnnotation()
+            }
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+                
+            }
+            .mapStyle(.standard(pointsOfInterest: .excludingAll))
+            
+            ExpandingMenu()
+                .environmentObject(mapViewModel)
+                .padding(.leading)
         }
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-        }
-        .mapStyle(.standard(pointsOfInterest: .excludingAll))
     }
 }
 

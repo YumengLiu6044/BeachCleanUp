@@ -34,7 +34,7 @@ struct CameraView: View {
         let showCameraView = cameraVM.showCameraView
         
         VStack {
-            if showCameraView, let captured = cameraVM.capturedImage {
+            if showCameraView, let _ = cameraVM.capturedImage {
                 ImagePreview()
                     .environmentObject(cameraVM)
             }

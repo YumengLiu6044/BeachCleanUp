@@ -20,6 +20,10 @@ class MapViewModel: ObservableObject {
     @Published var cameraPosition: MapCameraPosition
     @Published var cameraBounds: MapCameraBounds
     
+    @Published var trashMenuOption:       MenuOption = .trash()
+    @Published var trashCanMenuOption:    MenuOption = .trashCan()
+    @Published var roverMenuOption:       MenuOption = .rover()
+    
     // Add locations of trash
     
     // Add locations of trash cans
