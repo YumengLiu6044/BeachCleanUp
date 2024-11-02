@@ -55,6 +55,11 @@ class MapViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
+    //MARK: Loads listeners
+    func loadListeners() {
+        
+    }
+    
     // MARK: Removes listeners
     func removeListeners() -> Void {
         

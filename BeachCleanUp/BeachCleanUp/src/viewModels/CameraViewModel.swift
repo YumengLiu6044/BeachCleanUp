@@ -9,5 +9,7 @@ import SwiftUI
 
 
 final class CameraViewModel: ObservableObject {
+    @Published var capturedImage: UIImage?
+    @Published var showCameraView: Bool = true
     
 }

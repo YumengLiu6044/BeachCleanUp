@@ -9,10 +9,10 @@ import SwiftUI
 import MijickCameraView
 
 struct CameraView: View {
-    @State private var image: UIImage?
     
     @Namespace var namespace
     
+    @ObservedObject private var cameraVM: CameraViewModel = CameraViewModel()
     @ObservedObject private var manager: CameraManager = .init(
             outputType: .photo,
             cameraPosition: .back,
@@ -31,19 +31,18 @@ struct CameraView: View {
     }
     
     var body: some View {
+        let showCameraView = cameraVM.showCameraView
+        
         VStack {
-            if let _ = image {
-                Text("Captured")
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+            if showCameraView, let captured = cameraVM.capturedImage {
+                ImagePreview()
+                    .environmentObject(cameraVM)
             }
             else {
                 MCameraController(manager: manager)
                     .cameraScreen(customCamera)
                     .onImageCaptured { captured in
-                        self.image = captured
-                    }
-                    .onVideoCaptured { capturedURL in
-                        print(capturedURL.absoluteString)
+                        cameraVM.capturedImage = captured
                     }
             }
         }

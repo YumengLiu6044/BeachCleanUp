@@ -6,8 +6,17 @@
 //
 
 import Foundation
+//import Firebase
+//import FirebaseFirestore
 
-
-class FirebaseManager: NSObject {
-    
-}
+//class FirebaseManager: NSObject {
+//    let firestore: Firestore
+//        static let shared = FirebaseManager()
+//        
+//        override init() {
+//            FirebaseApp.configure()
+//            self.firestore = Firebase.Firestore.firestore()
+//            super.init()
+//        }
+//        
+//}
