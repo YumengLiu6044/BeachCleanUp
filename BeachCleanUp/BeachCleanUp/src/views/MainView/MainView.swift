@@ -1,7 +1,18 @@
 import SwiftUI
+import MijickCameraView
 
 struct MainView: View {
     @ObservedObject var appViewModel = AppViewModel()
+    @ObservedObject private var manager: CameraManager = .init(
+            outputType: .photo,
+            cameraPosition: .back,
+            resolution: .hd4K3840x2160,
+            frameRate: 25,
+            flashMode: .off,
+            isGridVisible: false,
+            focusImageColor: .yellow,
+            focusImageSize: 92
+        )
 
     var body: some View {
         VStack {
@@ -13,6 +24,7 @@ struct MainView: View {
             case .camera:
                 CameraView()
                     .transition(.opacity)
+                    .environmentObject(manager)
 
             case .setting:
                 InfoView()

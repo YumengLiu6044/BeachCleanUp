@@ -26,7 +26,6 @@ struct MenuOptionView: View {
             if let systemName = systemName {
                 Label(labelText, systemImage: systemName)
                     .fontWeight(.medium)
-                    .font(.title2)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .background {
@@ -40,7 +39,6 @@ struct MenuOptionView: View {
             else if let customImageName = customImageName {
                 Label(labelText, image: customImageName)
                     .fontWeight(.medium)
-                    .font(.title2)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .background {

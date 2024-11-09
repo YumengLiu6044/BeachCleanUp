@@ -9,20 +9,12 @@ import SwiftUI
 import MijickCameraView
 
 struct CameraView: View {
+    @EnvironmentObject var manager: CameraManager
     
     @Namespace var namespace
     
     @ObservedObject private var cameraVM: CameraViewModel = CameraViewModel()
-    @ObservedObject private var manager: CameraManager = .init(
-            outputType: .photo,
-            cameraPosition: .back,
-            resolution: .hd4K3840x2160,
-            frameRate: 25,
-            flashMode: .off,
-            isGridVisible: false,
-            focusImageColor: .yellow,
-            focusImageSize: 92
-        )
+    
     
     @ViewBuilder
     private func customCamera(manager: CameraManager, namespace: Namespace.ID, action: @escaping () -> Void) -> any MCameraView {
@@ -46,9 +38,12 @@ struct CameraView: View {
                     }
             }
         }
+        .onDisappear {
+            
+        }
     }
 }
 
-#Preview {
-    CameraView()
-}
+//#Preview {
+//    CameraView()
+//}
