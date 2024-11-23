@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E249577A2CEEBAF20001FC3E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E24957792CEEBAF20001FC3E /* FirebaseFirestore */; };
+		E249577C2CEEBAF20001FC3E /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = E249577B2CEEBAF20001FC3E /* FirebaseMLModelDownloader */; };
+		E249577E2CEEBAF20001FC3E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E249577D2CEEBAF20001FC3E /* FirebaseStorage */; };
 		E2B579622CCF2CE60057D733 /* MijickCameraView in Frameworks */ = {isa = PBXBuildFile; productRef = E2B579612CCF2CE60057D733 /* MijickCameraView */; };
-		E2C48A7A2CEE8F29005F3056 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E2C48A792CEE8F29005F3056 /* FirebaseFirestore */; };
-		E2C48A7C2CEE8F29005F3056 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E2C48A7B2CEE8F29005F3056 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E249577C2CEEBAF20001FC3E /* FirebaseMLModelDownloader in Frameworks */,
+				E249577E2CEEBAF20001FC3E /* FirebaseStorage in Frameworks */,
 				E2B579622CCF2CE60057D733 /* MijickCameraView in Frameworks */,
-				E2C48A7A2CEE8F29005F3056 /* FirebaseFirestore in Frameworks */,
-				E2C48A7C2CEE8F29005F3056 /* FirebaseStorage in Frameworks */,
+				E249577A2CEEBAF20001FC3E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +132,9 @@
 			name = BeachCleanUp;
 			packageProductDependencies = (
 				E2B579612CCF2CE60057D733 /* MijickCameraView */,
-				E2C48A792CEE8F29005F3056 /* FirebaseFirestore */,
-				E2C48A7B2CEE8F29005F3056 /* FirebaseStorage */,
+				E24957792CEEBAF20001FC3E /* FirebaseFirestore */,
+				E249577B2CEEBAF20001FC3E /* FirebaseMLModelDownloader */,
+				E249577D2CEEBAF20001FC3E /* FirebaseStorage */,
 			);
 			productName = BeachCleanUp;
 			productReference = E25DA5D02CCC72E200A479DB /* BeachCleanUp.app */;
@@ -217,7 +220,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */,
-				E2C48A782CEE8F29005F3056 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E24957782CEEBAF20001FC3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E25DA5D12CCC72E200A479DB /* Products */;
@@ -592,6 +595,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E24957782CEEBAF20001FC3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
 		E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Mijick/CameraView.git";
@@ -600,31 +611,28 @@
 				minimumVersion = 2.1.0;
 			};
 		};
-		E2C48A782CEE8F29005F3056 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.5.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E24957792CEEBAF20001FC3E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E24957782CEEBAF20001FC3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E249577B2CEEBAF20001FC3E /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E24957782CEEBAF20001FC3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		E249577D2CEEBAF20001FC3E /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E24957782CEEBAF20001FC3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		E2B579612CCF2CE60057D733 /* MijickCameraView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E2B579602CCF2CE60057D733 /* XCRemoteSwiftPackageReference "CameraView" */;
 			productName = MijickCameraView;
-		};
-		E2C48A792CEE8F29005F3056 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2C48A782CEE8F29005F3056 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		E2C48A7B2CEE8F29005F3056 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2C48A782CEE8F29005F3056 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
